@@ -36,9 +36,16 @@ For example:
 # add execution access
 chmod +x scripts/bvh_broadcaster.py
 # loop broadcasting bvh to world frame
-python bvh_broadcaster.py ../example/13_14.bvh world -l
+python scripts/bvh_broadcaster.py example/13_14.bvh world -l
 ```
 
+Now, you can view the result in rviz:
+
+<img src="example/example_bvh.gif" alt="laugh" width="550px"/>
+
+The original actor and BVH file are as follows:
+
+<img src="example/example_actor.gif" alt="laugh" height="200px"/><img src="example/example_animator.gif" alt="laugh" height="200px"/>
 
 ## BVH resources for Motion Capture
 CMU provides a lot of useful motion capture data, see [CMU MoCap](http://mocap.cs.cmu.edu/). Nevertheless, these data are not presented in BVH format. You can find relevant BVH-formatted CMU MoCap from [this post](https://github.com/mingfeisun/bvh_broadcaster/blob/master/cmu_mocap_bvh.md).
