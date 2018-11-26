@@ -329,20 +329,6 @@ class BVHBroadcaster(BVHReader):
                           self.scaling_factor * (root.offset[1]), 
                           self.scaling_factor * (root.offset[2]))
 
-        if root.isRoot():
-            theta = math.radians(90)
-            c = math.cos(theta)
-            s = math.sin(theta)
-            mat_x_rot = numpy.array([ [1.,0.,0.],
-                                      [0., c,-s],
-                                      [0., s, c]])
-            mat_z_rot = numpy.array([ [ c,-s,0.,0.],
-                                      [ s, c,0.,0.],
-                                      [0.,0.,1.,0.],
-                                      [0.,0.,0.,1.] ])
-            temp_trans = numpy.matmul(mat_x_rot, temp_trans)
-            mat_rot = numpy.matmul(mat_rot, mat_z_rot)
-
         temp_rot = tf.transformations.quaternion_from_matrix(mat_rot)
 
         self.br.sendTransform(temp_trans, temp_rot, rospy.Time.now(), root.name, parent_frame)
