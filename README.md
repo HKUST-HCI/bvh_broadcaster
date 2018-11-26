@@ -1,5 +1,5 @@
 # bvh_broadcaster
-[ROS wiki](http://wiki.ros.org/BVHBroadcaster)
+[ROS wiki](http://wiki.ros.org/bvh_broadcaster)
 
 bvh_broadcaster: broadcasting bvh motion capture as tf in ROS
 
